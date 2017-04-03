@@ -82,6 +82,7 @@ module Fastlane
         html_file_name = params[:html_file_name]
         version_template_path = params[:version_template_path]
         version_file_name = params[:version_file_name]
+        title_suffix = params[:title_suffix]
 
         url_part = self.expand_path_with_substitutions_from_ipa_plist(ipa_file, s3_path)
 
