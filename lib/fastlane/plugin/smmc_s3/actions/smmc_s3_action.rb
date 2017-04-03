@@ -129,6 +129,7 @@ module Fastlane
         full_version = "#{bundle_version}.#{build_num}"
 
         # Creating plist and html names
+        print "bundle_version=>" + bundle_version
         plist_file_name ||= "#{url_part}#{title.delete(' ')}#{title_suffix}_#{bundle_version}.plist"
 
         # grabs module
