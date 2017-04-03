@@ -129,7 +129,7 @@ module Fastlane
         full_version = "#{bundle_version}.#{build_num}"
 
         # Creating plist and html names
-        plist_file_name ||= "#{url_part}#{title.delete(' ')}_#{title_suffix}_#{bundle_version}.plist"
+        plist_file_name ||= "#{url_part}#{title.delete(' ')}#{title_suffix}_#{bundle_version}.plist"
 
         # grabs module
         eth = Fastlane::Helper::SmmcS3Helper
