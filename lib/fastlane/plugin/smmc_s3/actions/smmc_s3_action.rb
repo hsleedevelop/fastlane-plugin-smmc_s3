@@ -96,18 +96,18 @@ module Fastlane
         Actions.lane_context[SharedValues::S3_IPA_OUTPUT_PATH] = ipa_url
         ENV[SharedValues::S3_IPA_OUTPUT_PATH.to_s] = ipa_url
 
-        if dsym_file
-          dsym_file_basename = File.basename(dsym_file)
-          dsym_file_name = "#{url_part}#{dsym_file_basename}"
-          dsym_file_data = File.open(dsym_file, 'rb')
+        # if dsym_file
+        #   dsym_file_basename = File.basename(dsym_file)
+        #   dsym_file_name = "#{url_part}#{dsym_file_basename}"
+        #   dsym_file_data = File.open(dsym_file, 'rb')
 
-          dsym_url = self.upload_file(s3_client, s3_bucket, app_directory, dsym_file_name, dsym_file_data, acl)
+        #   dsym_url = self.upload_file(s3_client, s3_bucket, app_directory, dsym_file_name, dsym_file_data, acl)
 
-          # Setting action and environment variables
-          Actions.lane_context[SharedValues::S3_DSYM_OUTPUT_PATH] = dsym_url
-          ENV[SharedValues::S3_DSYM_OUTPUT_PATH.to_s] = dsym_url
+        #   # Setting action and environment variables
+        #   Actions.lane_context[SharedValues::S3_DSYM_OUTPUT_PATH] = dsym_url
+        #   ENV[SharedValues::S3_DSYM_OUTPUT_PATH.to_s] = dsym_url
 
-        end
+        # end
 
         if params[:upload_metadata] == false
           return true
